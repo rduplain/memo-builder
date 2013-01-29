@@ -1,8 +1,9 @@
 ## memo-builder: finds structured text files, builds PDFs
 
-memo-builder provides a Makefile for GNU make that searches for all structured
-text files in the current directory and subdirectories and builds each into a
-PDF, placed on the filesystem next to the input file.
+memo-builder provides a Makefile for GNU make on Unix-like systems, which
+searches for all structured text files in the current directory and
+subdirectories and builds each into a PDF, placed on the filesystem next to the
+input file.
 
 Collect your technical memos as structured text documents, and organize them on
 the filesystem. Use memo-builder to build PDFs, then sync the filesystem to
