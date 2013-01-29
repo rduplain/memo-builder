@@ -15,6 +15,8 @@
     \usepackage[utf8]{inputenc}
   \fi
 \fi
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{2A5DB0}
 $if(natbib)$
 \usepackage{natbib}
 \bibliographystyle{plainnat}
@@ -70,11 +72,17 @@ $endif$
               unicode=false, % unicode breaks when used with xetex
               xetex,
               colorlinks=true,
-              linkcolor=blue]{hyperref}
+              linkcolor=linkcolor,
+              citecolor=linkcolor,
+              filecolor=linkcolor,
+              urlcolor=linkcolor]{hyperref}
 \else
   \usepackage[unicode=true,
               colorlinks=true,
-              linkcolor=blue]{hyperref}
+              linkcolor=linkcolor,
+              citecolor=linkcolor,
+              filecolor=linkcolor,
+              urlcolor=linkcolor]{hyperref}
 \fi
 \hypersetup{breaklinks=true, pdfborder={0 0 0}}
 $if(strikeout)$
