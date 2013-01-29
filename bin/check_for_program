@@ -11,23 +11,41 @@ Ubuntu: sudo apt-get install pandoc
 EOF
 }
 
+readme_texlive() {
+cat <<EOF
+TeX Live is a distribution of TeX document production system.
+Note that the texlive-full distribution is over 2GB.
+Homepage: http://www.tug.org/texlive/
+Ubuntu: sudo apt-get install texlive-full
+EOF
+}
+
 readme_pdflatex() {
 cat <<EOF
 LaTeX: A document preparation system.
-Distribution: http://www.tug.org/texlive/
 Homepage: http://www.latex-project.org/
 Ubuntu: sudo apt-get install texlive-latex-base
 EOF
+echo
+readme_texlive
 }
 
 readme_latex() {
 cat <<EOF
 LaTeX: A document preparation system.
-Note that most tex distributions are quite large, multiple gigabytes.
-Distribution: http://www.tug.org/texlive/
 Homepage: http://www.latex-project.org/
-Ubuntu: sudo apt-get install texlive-full
 EOF
+echo
+readme_texlive
+}
+
+readme_xelatex() {
+cat <<EOF
+XeTeX: Unicode-based TeX
+Homepage: http://xetex.sourceforge.net/
+EOF
+echo
+readme_texlive
 }
 
 readme_dvipdf() {
