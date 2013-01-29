@@ -8,15 +8,18 @@ cat <<EOF
 pandoc: a universal document converter.
 Homepage: http://johnmacfarlane.net/pandoc/
 Ubuntu: sudo apt-get install pandoc
+Others: http://johnmacfarlane.net/pandoc/installing.html
 EOF
 }
 
-readme_texlive() {
+readme_tex_distribution() {
 cat <<EOF
-TeX Live is a distribution of TeX document production system.
-Note that the texlive-full distribution is over 2GB.
+BasicTeX for Mac OS X, 64MB.
+Homepage: http://www.tug.org/mactex/morepackages.html
+
+TeX Live for GNU/Linux, note that the texlive-full distribution is over 2GB.
 Homepage: http://www.tug.org/texlive/
-Ubuntu: sudo apt-get install texlive-full
+Ubuntu: sudo apt-get install texlive
 EOF
 }
 
@@ -24,10 +27,9 @@ readme_pdflatex() {
 cat <<EOF
 LaTeX: A document preparation system.
 Homepage: http://www.latex-project.org/
-Ubuntu: sudo apt-get install texlive-latex-base
 EOF
 echo
-readme_texlive
+readme_tex_distribution
 }
 
 readme_latex() {
@@ -36,7 +38,7 @@ LaTeX: A document preparation system.
 Homepage: http://www.latex-project.org/
 EOF
 echo
-readme_texlive
+readme_tex_distribution
 }
 
 readme_xelatex() {
@@ -45,7 +47,7 @@ XeTeX: Unicode-based TeX
 Homepage: http://xetex.sourceforge.net/
 EOF
 echo
-readme_texlive
+readme_tex_distribution
 }
 
 readme_dvipdf() {
