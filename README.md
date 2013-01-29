@@ -21,4 +21,22 @@ Currently supports structured text formats:
 
 Adding support for other pandoc-supported structured text formats is trivial.
 
+Add memo-builder to your git project using a submodule:
+
+    git submodule add https://github.com/rduplain/memo-builder.git memo-builder
+
+Then in a Makefile at the root of your project (note literal tabs):
+
+    include memo-builder/Makefile
+
+    memo-builder/Makefile:
+    	git submodule init
+    	git submodule update
+
+With this Makefile in place, just run `make` to build all PDFs. The 'include'
+statement will do its work. (If you already have an 'all' target, use `make
+pdfs`.) If the memo-builder submodule has not been initialized, the Makefile
+will call out to git to do so. Update to the latest memo-builder with `git
+submodule update`.
+
 [emacs_integration]: https://github.com/rduplain/home/blob/610e9361922266d86431f2a29971d93ac0a1d2cd/.emacs#L316

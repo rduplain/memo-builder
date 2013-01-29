@@ -9,7 +9,9 @@ pdf_files += $(patsubst %.md,%.pdf,$(wildcard *.md))
 pdf_files_deep := $(patsubst %.rst,%.pdf,$(wildcard **/*.rst))
 pdf_files_deep += $(patsubst %.md,%.pdf,$(wildcard **/*.md))
 
-all: $(pdf_files) $(pdf_files_deep)
+all: pdfs
+
+pdfs: $(pdf_files) $(pdf_files_deep)
 
 %.pdf: %.rst
 	@$(check) pandoc pdflatex
