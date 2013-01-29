@@ -1,0 +1,65 @@
+#!/bin/bash
+# check_for_program: check if a needed program is available, provide help.
+
+HELP_NAME=${HELP_NAME:-memo-builder}
+
+readme_pandoc() {
+cat <<EOF
+pandoc: a universal document converter.
+Homepage: http://johnmacfarlane.net/pandoc/
+Ubuntu: sudo apt-get install pandoc
+EOF
+}
+
+readme_pdflatex() {
+cat <<EOF
+LaTeX: A document preparation system.
+Distribution: http://www.tug.org/texlive/
+Homepage: http://www.latex-project.org/
+Ubuntu: sudo apt-get install texlive-latex-base
+EOF
+}
+
+readme_latex() {
+cat <<EOF
+LaTeX: A document preparation system.
+Note that most tex distributions are quite large, multiple gigabytes.
+Distribution: http://www.tug.org/texlive/
+Homepage: http://www.latex-project.org/
+Ubuntu: sudo apt-get install texlive-full
+EOF
+}
+
+readme_dvipdf() {
+cat <<EOF
+dvipdf is part of ghostscript and works with LaTeX .dvi files.
+Homepage: http://www.ghostscript.com/
+Ubuntu: sudo apt-get install ghostscript
+EOF
+}
+
+readme_rst2latex() {
+cat <<EOF
+rst2latex is part of the docutils package.
+Homepage: http://docutils.sourceforge.net/
+Ubuntu: sudo apt-get install python-docutils
+Python: pip install docutils
+EOF
+}
+
+for program in $@; do
+    if ( ! which $program > /dev/null ); then
+        exec >&2 # Redirect all further stdout to stderr.
+        echo "$HELP_NAME requires '$program' program, but could not find it."
+
+        # Look for a help function of the same name, and call it.
+        readme_func=readme_${program}
+        readme_type=`type -t $readme_func`
+        if [ -n "$readme_type" ] && [ "$readme_type" = "function" ]; then
+            echo
+            $readme_func
+            echo
+        fi
+        exit 1
+    fi
+done

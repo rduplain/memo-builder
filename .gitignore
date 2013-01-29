@@ -1,0 +1,11 @@
+.#*
+*~
+\#*
+*.aux
+.DS_Store
+/.emacs*
+*.log
+__MACOSX
+*.out
+*.pdf
+*.sw*
