@@ -28,6 +28,8 @@ Add memo-builder to your git project using a submodule:
 
 Then in a Makefile at the root of your project (note literal tabs):
 
+    all: pdfs
+
     include memo-builder/Makefile
 
     memo-builder/Makefile:
@@ -35,9 +37,9 @@ Then in a Makefile at the root of your project (note literal tabs):
     	git submodule update
 
 With this Makefile in place, just run `make` to build all PDFs. The 'include'
-statement will do its work. (If you already have an 'all' target, use `make
-pdfs`.) If the memo-builder submodule has not been initialized, the Makefile
-will call out to git to do so. Update to the latest memo-builder with `git
-submodule update`.
+statement will do its work. If you already have an 'all' target, use `make
+pdfs` or depend on the 'pdfs' target. If the memo-builder submodule has not
+been initialized, the Makefile will call out to git to do so. Update to the
+latest memo-builder with `git submodule update`.
 
 [emacs_integration]: https://github.com/rduplain/home/blob/610e9361922266d86431f2a29971d93ac0a1d2cd/.emacs#L316
