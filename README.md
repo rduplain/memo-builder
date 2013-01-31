@@ -42,4 +42,15 @@ pdfs` or depend on the 'pdfs' target. If the memo-builder submodule has not
 been initialized, the Makefile will call out to git to do so. Update to the
 latest memo-builder with `git submodule update`.
 
+A clean target in the Makefile could be:
+
+    clean:
+    	find . -name '*.pdf' -delete
+
+You could also use `git clean` if you are careful about your git ignore and
+untracked files:
+
+    clean:
+    	git clean -fx
+
 [emacs_integration]: https://github.com/rduplain/home/blob/610e9361922266d86431f2a29971d93ac0a1d2cd/.emacs#L316
