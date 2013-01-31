@@ -4,14 +4,13 @@ check := $(makefile_directory)bin/check_for_program
 
 # Find all supported formats and collect target PDFs into a variable.
 # Supported formats: .rst, .md
-pdf_files := $(patsubst %.rst,%.pdf,$(wildcard *.rst))
-pdf_files += $(patsubst %.md,%.pdf,$(wildcard *.md))
-pdf_files_deep := $(patsubst %.rst,%.pdf,$(wildcard **/*.rst))
-pdf_files_deep += $(patsubst %.md,%.pdf,$(wildcard **/*.md))
+rst_files := $(shell find . -name '*.rst')
+pdf_files := $(rst_files:%.rst=%.pdf)
 
-all: pdfs
+md_files := $(shell find . -name '*.md')
+pdf_files += $(md_files:%.md=%.pdf)
 
-pdfs: $(pdf_files) $(pdf_files_deep)
+pdfs: $(pdf_files)
 
 %.pdf: %.rst
 	@$(check) pandoc pdflatex
