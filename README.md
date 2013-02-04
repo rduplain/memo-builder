@@ -9,7 +9,9 @@ Collect your technical memos as structured text documents, and organize them on
 the filesystem. Use memo-builder to build PDFs, then sync the filesystem to
 publish. Since memo-builder creates PDFs in place, you are in complete control
 of the directory structure. Use an [editor keybinding][emacs_integration] to
-call out to make and build PDFs while editing memos.
+call out to make and build PDFs while editing memos, and a
+[document viewer][evince] which auto-reloads PDFs on file-changes (and has
+vi-like keybindings as a bonus).
 
 Mostly, memo-builder is a wrapper around
 [pandoc](http://johnmacfarlane.net/pandoc/),
@@ -20,13 +22,16 @@ Currently supports structured text formats:
  * .md - [markdown](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown)
  * .rst - [reStructuredText](http://docutils.sourceforge.net/docs/ref/rst/introduction.html)
 
-Adding support for other pandoc-supported structured text formats is trivial.
+Adding support for other pandoc-supported structured text formats is trivial. A
+sample .md and .rst document are included in this repository, and a useful
+comparison of pandoc's .md and .rst support is
+[available online](http://www.unexpected-vortices.com/doc-notes/markdown-and-rest-compared.html).
 
 Add memo-builder to your git project using a submodule:
 
     git submodule add https://github.com/rduplain/memo-builder.git memo-builder
 
-Then in a Makefile at the root of your project (note literal tabs):
+Then in a Makefile at the root of your project (**indent with literal tabs**):
 
     all: pdfs
 
@@ -54,3 +59,4 @@ untracked files:
     	git clean -fx
 
 [emacs_integration]: https://github.com/rduplain/home/blob/610e9361922266d86431f2a29971d93ac0a1d2cd/.emacs#L316
+[evince]: http://projects.gnome.org/evince/
