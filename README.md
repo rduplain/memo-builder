@@ -45,7 +45,9 @@ With this Makefile in place, just run `make` to build all PDFs. The 'include'
 statement will do its work. If you already have an 'all' target, use `make
 pdfs` or depend on the 'pdfs' target. If the memo-builder submodule has not
 been initialized, the Makefile will call out to git to do so. Update to the
-latest memo-builder with `git submodule update`.
+latest memo-builder with:
+
+    cd memo-builder; git fetch && git reset --hard origin/master
 
 A clean target in the Makefile could be:
 
