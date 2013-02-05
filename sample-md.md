@@ -1,20 +1,26 @@
 % Sample memo in markdown .md
 % Ron DuPlain\
   <http://github.com/rduplain>
-% 2013-02-04
+% 2013-02-04 - 2013-02-05
 
 Purpose
 -------
 
 Provide a simple sample memo which includes some features that are not
-obvious in the documentation for markdown or pandoc. See:
+obvious in the documentation for markdown or pandoc. [^1] See:
 
 * <http://daringfireball.net/projects/markdown/syntax>
 * <http://johnmacfarlane.net/pandoc/README.html>
 * <http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown>
 * <http://www.unexpected-vortices.com/doc-notes/markdown-and-rest-compared.html>
 
-<!-- This is a non-printing comment in .md. -->
+<!--
+  This is a non-printing comment in .md.
+  With multiple lines.
+-->
+
+[^1]: Together this document and linked resources should provide enough samples
+      to put memo-builder to use with .md quickly.
 
 
 Pandoc Notes
@@ -43,7 +49,7 @@ By default, the formatting of the title will space out individual authors. To
 format the author list more explicitly, specify newlines with the backslash
 character, `\`:
 
-    % Regulated Waste Disposal: Safety of Citizens around Disposal Sites
+    % Regulated Waste Disposal: Safety of Citizens in and around Disposal Sites
     % Guy Smiley PE and Count von Count\
       Sesame Engineering, Inc.
     % Memo #001\

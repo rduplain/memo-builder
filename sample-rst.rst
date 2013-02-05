@@ -4,20 +4,24 @@
 
  :Author: | Ron DuPlain
           | http://github.com/rduplain
- :Date: 2013-02-04
+ :Date: 2013-02-04 - 2013-02-05
 
 
 Purpose
 -------
 
 Provide a simple sample memo which includes some features that are not obvious
-in the documentation for reStructuredText or pandoc. See:
+in the documentation for reStructuredText or pandoc. [1]_ See:
 
 * http://docutils.sourceforge.net/rst.html
 * http://johnmacfarlane.net/pandoc/README.html
 * http://www.unexpected-vortices.com/doc-notes/markdown-and-rest-compared.html
 
 .. This is a non-printing comment in .rst.
+   With multiple lines.
+
+.. [1] Together this document and linked resources should provide enough
+       samples to put memo-builder to use with .rst quickly.
 
 
 Pandoc Notes
