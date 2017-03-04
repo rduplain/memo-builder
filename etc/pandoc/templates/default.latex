@@ -106,6 +106,8 @@ $endif$
 $if(lang)$
 \usepackage[$lang$]{babel}
 $endif$
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $for(header-includes)$
 $header-includes$
 $endfor$
