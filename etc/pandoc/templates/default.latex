@@ -1,7 +1,6 @@
 % Based on default latex template shipped with pandoc: `pandoc -D latex`.
 % Simple pandoc default.latex with comments: https://gist.github.com/1017790
 \documentclass[usletter]{article}
-\usepackage[margin=1in]{geometry}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifxetex
